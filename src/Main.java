@@ -17,8 +17,8 @@ public class Main {
         // Criação das armas e dos Mechas antes do combate
 
         // Armas disponíveis
-        Weapon metralhadora = new Weapon("Metralhadora", 15);
-        Weapon canhao = new Weapon("Canhão de Plasma", 45);
+        Weapon metralhadora = new Weapon("Metralhadora", 15,2);
+        Weapon canhao = new Weapon("Canhão de Plasma", 45,8);
 
 
 
@@ -42,6 +42,10 @@ public class Main {
                 canhao
         );
 
+        Mapa map1 = new Mapa();
+        map1.posicionar(p1,0,0);
+        map1.posicionar(p2,9,9);
+
 
         // Mensagens iniciais de combate
         System.out.println("Combate Iniciado: " + p1.name + " VS " + p2.name);
@@ -49,9 +53,15 @@ public class Main {
 
         BattleManager juiz = new BattleManager();
 
+        map1.exibir();
         // Loop principal do jogo.
         // O combate continua enquanto ambos os Mechas estiverem vivos.
-        juiz.startBattle(p1,p2);
+
+        double dist = map1.calcDist(p1,p2);
+
+
+        juiz.startBattle(p1,p2,map1);
+        map1.exibir();
 
     }
 }

@@ -5,11 +5,13 @@ public class Weapon extends Item {
 
     // Dano base causado pela arma em um ataque
     int dmg;
+    int range;
 
     // Construtor padrão da arma
     // Recebe o nome e o valor de dano base
-    public Weapon(String name, int dmg){
+    public Weapon(String name, int dmg, int ranger){
         super(name);
         this.dmg = dmg;
+        this.range = ranger;
     }
 }

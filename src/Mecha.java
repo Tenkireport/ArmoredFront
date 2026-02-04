@@ -15,6 +15,10 @@ public class Mecha {
     Peca rightArm;
     Peca legs;
 
+    // Local no mapa
+    int l;
+    int c;
+
     // Arma equipada, responsável pelo dano base do ataque
     Weapon weapon;
 
